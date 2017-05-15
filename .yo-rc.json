@@ -1,0 +1,7 @@
+{
+  "generator-phaser": {
+    "projectName": "kidupstair",
+    "esVersion": 6,
+    "gameFolder": "boilerplate"
+  }
+}
