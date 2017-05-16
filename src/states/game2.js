@@ -1,4 +1,4 @@
-class Game extends Phaser.State {
+class Game2 extends Phaser.State {
 
   constructor() {
     super();
@@ -23,18 +23,18 @@ class Game extends Phaser.State {
 
   //load the game assets before the game starts
   preload() {
-    this.load.image('bg', 'assets/stage1/images/food-01.png');
-    this.load.image('ground', 'assets/stage1/images/ground.png');
-    this.load.image('platform', 'assets/stage1/images/platform.png');
-    this.load.image('goal', 'assets/stage1/images/gorilla3.png');
-    this.load.image('arrowButton', 'assets/stage1/images/arrowButton.png');
-    this.load.image('actionButton', 'assets/stage1/images/actionButton.png');
+    this.load.image('bg', 'assets/stage2/images/food-01.png');
+    this.load.image('ground', 'assets/stage2/images/ground.png');
+    this.load.image('platform', 'assets/stage2/images/platform.png');
+    this.load.image('goal', 'assets/stage2/images/gorilla3.png');
+    this.load.image('arrowButton', 'assets/stage2/images/arrowButton.png');
+    this.load.image('actionButton', 'assets/stage2/images/actionButton.png');
     //this.load.image('barrel', 'assets/images/barrel.png');
 
-    this.load.spritesheet('player', 'assets/stage1/images/player_spritesheet.png', 36, 40, 5, 1, 1);
+    this.load.spritesheet('player', 'assets/stage2/images/player_spritesheet.png', 36, 40, 5, 1, 1);
     //this.load.spritesheet('fire', 'assets/images/fire_spritesheet.png', 20, 21, 2, 1, 1);
 
-    this.load.text('level', 'assets/stage1/data/level.json');
+    this.load.text('level', 'assets/stage2/data/level.json');
   }
   //executed after everything is loaded
   create() {
@@ -172,4 +172,4 @@ class Game extends Phaser.State {
   // }
 }
 
-export default Game;
+export default Game2;
