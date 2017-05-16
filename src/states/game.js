@@ -15,7 +15,7 @@ class Game extends Phaser.State {
 
     this.cursors = this.game.input.keyboard.createCursorKeys();
 
-    this.game.world.setBounds(-300,0,360,1620);
+    this.game.world.setBounds(-this.game.world.centerX+180,0,this.game.world.centerX,1620);
 
     this.RUNNING_SPEED = 180;
     this.JUMPING_SPEED = 550;
@@ -31,7 +31,7 @@ class Game extends Phaser.State {
     this.load.image('actionButton', 'assets/stage1/images/actionButton.png');
     //this.load.image('barrel', 'assets/images/barrel.png');
 
-    this.load.spritesheet('player', 'assets/stage1/images/player_spritesheet.png', 28, 30, 5, 1, 1);
+    this.load.spritesheet('player', 'assets/stage1/images/player_spritesheet.png', 36, 40, 5, 1, 1);
     //this.load.spritesheet('fire', 'assets/images/fire_spritesheet.png', 20, 21, 2, 1, 1);
 
     this.load.text('level', 'assets/stage1/data/level.json');
@@ -84,7 +84,7 @@ class Game extends Phaser.State {
     this.player.animations.add('walking', [0, 1, 2, 1], 6, true);
     this.game.physics.arcade.enable(this.player);
     this.player.customParams = {};
-    this.player.body.collideWorldBounds = true;
+    //this.player.body.collideWorldBounds = true;
 
     this.game.camera.follow(this.player);
 
@@ -142,8 +142,9 @@ class Game extends Phaser.State {
     //game.state.start('GameState');
   //},*/
   win(player, goal) {
-    alert('you win!');
-    game.state.start('GameState');
+    //alert('you win!');
+    //this.game.state.start('gameover');
+    this.endGame();
   }
   createBarrel() {
     //give me the first dead sprite
@@ -162,7 +163,10 @@ class Game extends Phaser.State {
   endGame() {
     this.game.state.start('gameover');
   }
-
+  // render() {
+  //   // Camera
+  //   this.game.debug.cameraInfo(this.game.camera, 32, 32);
+  // }
 }
 
 export default Game;
